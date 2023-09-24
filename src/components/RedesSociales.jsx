@@ -1,7 +1,15 @@
 function RedesSociales() {
     return (
-        <div>
-            <h1>Redes Sociales</h1>
+        <div className="contenedorRedesSociales">
+            <div class="card">
+            <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div class="card">   
+            <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="card">
+            <i class="fa-brands fa-instagram"></i>
+            </div>
         </div>
     )
 }
