@@ -1,44 +1,106 @@
 import { useState } from "react"
-import React, { alerta_email, alerta_nombre, alerta_pass } from "react";
-import Alerta from "./Alerta";
-const Formulario = () => {
-    const [nombre, setNombre] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [repassword, setRepassword] = useState('');
 
-    const [error, setError] = useState(false);
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        
+const Formulario = ({setAlert}) => {
+  const [formData, setFormData] = useState({
+    nombre:"",
+    email:"",
+    password:"",
+    confirmPassword:"",
+  });
 
-        setError(false);
-        setEmail('');
-        setPassword('');
-        setRepassword('');
-        setNombre('');
+  const validarDatos = (e) => {
+    e.preventDefault();
+
+    const { nombre, email, password, confirmPassword } = formData;
+    const validarInputs = !nombre || !email || !password || !confirmPassword;
+    const validarPassword = password !== confirmPassword;
+
+    validarInputs
+      ? setAlert({
+          error: true,
+          msg: 'Debes completar todos los campos',
+          color: "danger",
+      })
+      : setAlert({
+        error: false,
+        msg: 'Ya estas suscrito',
+        color: "success",
+      });
+    
+    if (validarPassword) {
+      setAlert({
+        error: true,
+        msg: 'Las contraseñas no coinciden',
+        color: "danger",
+      });
+
+      return;
     }
-    return (
-        <>
-            <form className="formulario" onSubmit={handleSubmit}>
-            {error ? <p className="formulario__error">Todos los campos son obligatorios</p>  : null}
-                <div className="formulario__grupo">
-                    <input type="text" name="nombre" className="formulario__input" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                </div>
-                <div className="formulario__grupo">
-                    <input type="email" name="email" className="formulario__input" aria-describedby="emailHelp" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div className="formulario__grupo">
-                    <input type="password" name="contraseña" className="formulario__input" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div className="formulario__grupo">
-                    <input type="password" name="recontraseña" className="formulario__input" placeholder="Confirmar Contraseña" value={repassword} onChange={(e) => setRepassword(e.target.value)} />
-                </div>
-                <button className="boton" type="submit" onSubmit={handleSubmit}>Registrarse</button>
-            </form>
-        </>
-    )
-}
+    setFormData({
+      nombre:"",
+      email:"",
+      password:"",
+      confirmPassword:"",
+    });
+  }
+const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value});
+};
+
+
+  return (
+    <>
+      <form
+        className="formulario"
+        onSubmit={validarDatos}>
+          <div className="form-group mb-3">
+            <input type="text" name="nombre" className="form-control" placeholder="Nombre" onChange={handleChange} value={formData.nombre}/>
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="tuemail@ejemplo.com"
+              onChange={handleChange}
+              value={formData.email}
+              />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              placeholder="Contrasena"
+              onChange={handleChange}
+              value={formData.password}
+              />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="password"
+              name="confirmPassword"
+              className="form-control"
+              placeholder="Confirma tu contrasena"
+              onChange={handleChange}
+              value={formData.confirmPassword}
+              />
+          </div>
+          <div className="d-grid gap-2">
+            <button
+              type="submit"
+              className="btn btn-success"
+              style={{color: "darkgreen"}}
+
+            >
+                Regristarse
+            </button>
+          </div>
+        </form>
+    </>
+  );
+};
+
 
 export default Formulario
