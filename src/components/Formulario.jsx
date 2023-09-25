@@ -11,19 +11,7 @@ const Formulario = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (nombre === '' || email === '' || password === '' || repassword === '') {
-            setError(true);
-            return
-        } else if (password !== repassword) {
-            setError(true);
-            return
-        } else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-            setError(true);
-            return
-        } else if (nombre.length < 3) {
-            setError(true);
-            return
-        }
+        
 
         setError(false);
         setEmail('');
