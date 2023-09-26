@@ -1,4 +1,4 @@
-const Alert = ({children, color}) => {
+const Alerta = ({children, color}) => {
     return (
       
       <div className={`alert alert.${color} my-2`} role="alert">
@@ -9,4 +9,4 @@ const Alert = ({children, color}) => {
     )
   }
 
-export default Alert
+export default Alerta
