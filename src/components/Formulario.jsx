@@ -46,6 +46,7 @@ const Formulario = ({setAlert}) => {
   }
 const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value});
+  
 };
 
 
@@ -68,14 +69,11 @@ const handleChange = (e) => {
               />
           </div>
           <div className="d-grid gap-2">
-            <button type="submit" className="btn btn-success" style={{color: "darkgreen"}}
-
-            >
-                Regristarse
-            </button>
+            <button type="submit" className="btn btn-success" style={{color: "darkgreen"}}>Registarse</button>
           </div>
         </form>
     </>
+    
   );
 };
 

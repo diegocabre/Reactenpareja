@@ -13,10 +13,9 @@ const [alert, setAlert] = useState ({
 
   return (
     <>
-
-      <RedesSociales />
-      <Formulario setAlert={setAlert}/>
-      {alert.msg && <Alerta color={alert.color}>{alert.msg}</Alerta>}
+    <RedesSociales />
+    {alert.msg && <Alerta color={alert.color}>{alert.msg}</Alerta>}
+    <Formulario setAlert={setAlert}/>
     </>
   );
 };

@@ -5,6 +5,7 @@ const Alert = ({children, color}) => {
         {children}
       </div>
       
+      
     )
   }
 
