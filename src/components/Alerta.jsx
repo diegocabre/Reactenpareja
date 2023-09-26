@@ -1,8 +1,12 @@
-const Alerta = (alerta_email, alerta_nombre, alerta_pass, alerta_general) => {
+const Alert = ({children, color}) => {
     return (
-        <> 
-        </>
+      
+      <div className={`alert alert.${color} my-2`} role="alert">
+        {children}
+      </div>
+      
+      
     )
-}
+  }
 
-export default Alerta;
+export default Alert
