@@ -7,11 +7,17 @@
 }
 
 body {
-  background-color: #f8820487;
+  background-color: #ffffff;
 }
 
 .contenedor {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  border: 2px solid #000000;
+  background-image: url("./src/assets/logo/Hendy y Diego.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  filter:alpha(opacity=20);
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
@@ -19,12 +25,24 @@ body {
 }
 
 .titulo {
-  color: #000000;
+  color: #fbfbfb;
   text-transform: uppercase;
   font-size: 5rem;
   font-weight: 100;
   line-height: 1.1;
   margin: 2rem 0;
+}
+
+.subtitulo{
+  color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: #ffffff 0 0 2px, #ffffff 0 0 2px, #ffffff 0 0 2px;
+  text-decoration:solid;
+  font-weight: 100;
+  line-height: 1.1;
+  margin: 2rem 0;
+
 }
 
 .contenedorRedesSociales {
