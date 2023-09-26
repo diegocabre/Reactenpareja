@@ -25,14 +25,14 @@ const Formulario = ({ setAlert }) => {
             : setAlert({
                 error: false,
                 msg: 'Ya estas suscrito',
-                color: "",
+                color: "success",
             });
 
         if (validarPassword) {
             setAlert({
                 error: true,
                 msg: 'Las contraseñas no coinciden',
-                color: "",
+                color: "danger",
             });
 
             return;
