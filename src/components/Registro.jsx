@@ -1,3 +1,4 @@
+import React, {facebook, github, instagram} from "react";
 import RedesSociales from "./RedesSociales";
 
 
@@ -5,7 +6,7 @@ const Registro = () => {
 
   return (
     <>
-    <RedesSociales />
+    <RedesSociales facebook={facebook} github={github} instagram={instagram} />
     </>
   );
 };

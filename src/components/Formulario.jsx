@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 
 const Formulario = ({ setAlert }) => {
@@ -20,19 +20,19 @@ const Formulario = ({ setAlert }) => {
             ? setAlert({
                 error: true,
                 msg: 'Debes completar todos los campos',
-                color: "danger",
+                color: 'danger',
             })
             : setAlert({
                 error: false,
                 msg: 'Ya estas suscrito',
-                color: "success",
+                color: "",
             });
 
         if (validarPassword) {
             setAlert({
                 error: true,
                 msg: 'Las contraseñas no coinciden',
-                color: "danger",
+                color: "",
             });
 
             return;
@@ -69,7 +69,7 @@ const Formulario = ({ setAlert }) => {
                     />
                 </div>
                 <div className="d-grid gap-2">
-                    <button type="submit" className="btn btn-success" style={{ color: "darkgreen" }}>Registarse</button>
+                    <button type="submit" className="boton btn-success" /* style={{ color: "darkgreen" }} */>Registarse</button>
                 </div>
             </form>
         </>
