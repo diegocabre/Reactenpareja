@@ -58,40 +58,17 @@ const handleChange = (e) => {
             <input type="text" name="nombre" className="form-control" placeholder="Nombre" onChange={handleChange} value={formData.nombre}/>
           </div>
           <div className="form-group mb-3">
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="tuemail@ejemplo.com"
-              onChange={handleChange}
-              value={formData.email}
-              />
+            <input type="email" name="email" className="form-control" placeholder="tuemail@ejemplo.com" onChange={handleChange} value={formData.email}/>
           </div>
           <div className="form-group mb-3">
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              placeholder="Contrasena"
-              onChange={handleChange}
-              value={formData.password}
-              />
+            <input type="password" name="password" className="form-control" placeholder="Contrasena" onChange={handleChange} value={formData.password} />
           </div>
           <div className="form-group mb-3">
-            <input
-              type="password"
-              name="confirmPassword"
-              className="form-control"
-              placeholder="Confirma tu contrasena"
-              onChange={handleChange}
-              value={formData.confirmPassword}
+            <input type="password" name="confirmPassword" className="form-control" placeholder="Confirma tu contrasena" onChange={handleChange} value={formData.confirmPassword}
               />
           </div>
           <div className="d-grid gap-2">
-            <button
-              type="submit"
-              className="btn btn-success"
-              style={{color: "darkgreen"}}
+            <button type="submit" className="btn btn-success" style={{color: "darkgreen"}}
 
             >
                 Regristarse
