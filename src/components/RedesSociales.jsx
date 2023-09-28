@@ -1,19 +1,19 @@
-function RedesSociales({ facebook, github, instagram }) {
+export const RedesSociales = ({ facebook, github, instagram }) => {
     return (
         <>
-        <div  className="contenedorRedesSociales">
-            <div class="card">
-            <i class="fa-brands fa-facebook">{facebook}</i>
+            <div className="redes">
+                <div className="card">
+                    <i className="fa-brands fa-facebook">{facebook}</i>
+                </div>
+                <div className="card">
+                    <i className="fa-brands fa-github">{github}</i>
+                </div>
+                <div className="card">
+                    <i className="fa-brands fa-instagram">{instagram}</i>
+                </div>
             </div>
-            <div class="card">
-            <i class="fa-brands fa-github">{github}</i>
-            </div>
-            <div class="card">
-            <i class="fa-brands fa-instagram">{instagram}</i>
-            </div>
-        </div>
         </>
-    )
+    );
 }
 
 export default RedesSociales
