@@ -25,23 +25,23 @@ export const Formulario = () => {
             setTipo('danger');
         } else {
             setAlerta('¡Tu registro fue exitoso!');
+            setTipo('success');
             setForm({
                 nombre: '',
                 email: '',
                 pass: '',
                 repass: ''
-            })
-            setTipo('success');
+            });
         }
     }
     return (
         <div>
             <form className="formulario" onSubmit={onSubmit}>
-                <input type="text" name="nombre" placeholder="Escribe tu nombre" onChange={onChange} />
-                <input type="email" name="email" placeholder="correo@example.com" onChange={onChange} />
-                <input type="password" name="pass" placeholder="Escribe tu contraseña" onChange={onChange} />
-                <input type="password" name="repass" placeholder="Repite tu contraseña" onChange={onChange} />
-                <button type="submit">Registrar</button>
+                <input type="text" name="nombre" placeholder="Escribe tu nombre" value={form.nombre} onChange={onChange} />
+                <input type="email" name="email" placeholder="correo@example.com" value={form.email} onChange={onChange} />
+                <input type="password" name="pass" placeholder="Escribe tu contraseña" value={form.pass} onChange={onChange} />
+                <input type="password" name="repass" placeholder="Repite tu contraseña" value={form.repass} onChange={onChange} />
+                <button className="btn btn-success" type="submit">Registrar</button>
             </form>
             {alerta && <Alerta type={tipo} message={alerta} />}
         </div>
