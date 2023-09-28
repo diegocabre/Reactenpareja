@@ -8,6 +8,8 @@ export const Formulario = () => {
         pass: '',
         repass: ''
     });
+
+    // onChange
     const onChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
