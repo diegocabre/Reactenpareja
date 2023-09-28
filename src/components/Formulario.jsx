@@ -1,82 +1,49 @@
-import React, { useState } from "react"
+import { useState } from "react";
+import { Alerta } from "./Alerta";
 
-
-
-const Formulario = ({ setAlert }) => {
-    const [formData, setFormData] = useState({
-        nombre: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
+export const Formulario = () => {
+    const [form, setForm] = useState({
+        nombre: '',
+        email: '',
+        pass: '',
+        repass: ''
     });
+    const onChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
 
-    const validarDatos = (e) => {
+    const [alerta, setAlerta] = useState('');
+    const [tipo, setTipo] = useState('');
+    const onSubmit = (e) => {
         e.preventDefault();
 
-        const { nombre, email, password, confirmPassword } = formData;
-        const validarInputs = !nombre || !email || !password || !confirmPassword;
-        const validarPassword = password !== confirmPassword;
-
-        validarInputs
-            ? setAlert({
-                error: true,
-                msg: 'Debes completar todos los campos',
-                color: "danger",
+        if (form.pass !== form.repass) {
+            setAlerta('Las contraseñas no coinciden');
+            setTipo('danger');
+        } else if (form.nombre === '' || form.email === '' || form.pass === '') {
+            setAlerta('Todos los campos son obligatorios');
+            setTipo('danger');
+        } else {
+            setAlerta('¡Tu registro fue exitoso!');
+            setForm({
+                nombre: '',
+                email: '',
+                pass: '',
+                repass: ''
             })
-            : setAlert({
-                error: false,
-                msg: 'Ya estas suscrito',
-                color: "success",
-            });
-
-        if (validarPassword) {
-            setAlert({
-                error: true,
-                msg: 'Las contraseñas no coinciden',
-                color: "danger",
-            });
-
-            return;
+            setTipo('success');
         }
-        setFormData({
-            nombre: "",
-            email: "",
-            password: "",
-            confirmPassword: "",
-        });
     }
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    };
-
-
     return (
-        <>
-            <form
-                className="formulario"
-                onSubmit={validarDatos}>
-                <div className="form-group mb-3">
-                    <input type="text" name="nombre" className="form-control" placeholder="Nombre" onChange={handleChange} value={formData.nombre} />
-                </div>
-                <div className="form-group mb-3">
-                    <input type="email" name="email" className="form-control" placeholder="tuemail@ejemplo.com" onChange={handleChange} value={formData.email} />
-                </div>
-                <div className="form-group mb-3">
-                    <input type="password" name="password" className="form-control" placeholder="Contrasena" onChange={handleChange} value={formData.password} />
-                </div>
-                <div className="form-group mb-3">
-                    <input type="password" name="confirmPassword" className="form-control" placeholder="Confirma tu contrasena" onChange={handleChange} value={formData.confirmPassword}
-                    />
-                </div>
-                <div className="d-grid gap-2">
-                    <button type="submit" className="boton btn-success" /* style={{ color: "darkgreen" }} */>Registarse</button>
-                </div>
+        <div>
+            <form className="formulario" onSubmit={onSubmit}>
+                <input type="text" name="nombre" placeholder="Escribe tu nombre" onChange={onChange} />
+                <input type="email" name="email" placeholder="correo@example.com" onChange={onChange} />
+                <input type="password" name="pass" placeholder="Escribe tu contraseña" onChange={onChange} />
+                <input type="password" name="repass" placeholder="Repite tu contraseña" onChange={onChange} />
+                <button type="submit">Registrar</button>
             </form>
-        </>
-
+            {alerta && <Alerta type={tipo} message={alerta} />}
+        </div>
     );
-};
-
-
-export default Formulario
+}

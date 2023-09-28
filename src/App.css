@@ -3,97 +3,52 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body {
-  background-color: #ffffff;
-}
-
-.contenedor {
-  /* background-color: #ffffff; */
-  border: 2px solid #000000;
-  background-image: url("./src/assets/logo/logo1.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: transparent;
-  filter:alpha(opacity=20);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.titulo {
-  color: #fbfbfb;
-  text-transform: uppercase;
-  font-size: 5rem;
-  font-weight: 100;
-  line-height: 1.1;
-  margin: 2rem 0;
-}
-
-.subtitulo{
-  color: #ffffff;
-  background-color: #000000;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-shadow: #ffffff 0 0 2px, #ffffff 0 0 2px, #ffffff 0 0 2px;
-  text-decoration:solid;
-  font-weight: 100;
-  line-height: 1.1;
-  margin: 2rem 0;
-
-}
-
-.contenedorRedesSociales {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 10px;
-  font-size: 3rem;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
-  margin: 2rem 0;
-}
-
-.card {
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-color: #000000;
+  background-color: #242424;
 }
 
 .formulario {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.boton {
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 10px;
-  background-color: #185a00;
-  color: #ffffff;
-}
-
-.boton :hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.alert{
-  color: rgb(255, 255, 255);
-  font-size: 1rem;
+.card {
+  padding: 1rem;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
   text-align: center;
-  margin: 2rem 0;
-  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-brands {
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  color: #242424;
+}
+
+.card1 {
+  border: 1px solid #242424;
+  border-radius: 10%;
+  background-color: #fff;
+}
+
+.redes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
