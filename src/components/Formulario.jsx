@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 
+
 const Formulario = ({ setAlert }) => {
     const [formData, setFormData] = useState({
         nombre: "",
@@ -20,7 +21,7 @@ const Formulario = ({ setAlert }) => {
             ? setAlert({
                 error: true,
                 msg: 'Debes completar todos los campos',
-                color: 'danger',
+                color: "danger",
             })
             : setAlert({
                 error: false,

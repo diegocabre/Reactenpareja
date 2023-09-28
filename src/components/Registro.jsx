@@ -7,6 +7,7 @@ const Registro = () => {
   return (
     <>
     <RedesSociales facebook={facebook} github={github} instagram={instagram} />
+    
     </>
   );
 };
